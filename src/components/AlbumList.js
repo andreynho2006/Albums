@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 //class Component   (life cicle methods)
 class AlbumList extends Component {
     state = { albums: [] };
 
     componentWillMount() {
-        axios.get('https://rallycoding.herokuapp.com/api/music-albums')
+        axios.get('https://rallycoding.herokuapp.com/api/music_albums')
             .then(response => this.setState({ albums: response.data }));
     }
+
+    //helper function to get the albums
+    renderAlbums() {
+        return this.state.albums.map(album => 
+            <AlbumDetail key={album.title} album={album} />
+        );
+    }
+
     render() {
+    console.log(this.state);
+
         return (
             <View>
-                <Text>Album List!</Text>
+                {this.renderAlbums()}
             </View>
         );
     }   

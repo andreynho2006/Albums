@@ -21,7 +21,7 @@ export default Header;
 const styles = StyleSheet.create({
     textStyle: {
         fontSize: 20,  
-        color: '#000'    
+        color: '#000',    
     },
     viewStyle: {
         backgroundColor: '#F8F8F8',
