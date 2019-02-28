@@ -1,9 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-const CardItem = () => {
+const CardSection = (props) => {
     return (
-        <View style={styles.containerStyle}></View>
+        <View style={styles.containerStyle}>
+            {props.children}
+        </View>
     );
 };
 
@@ -19,4 +21,4 @@ const styles = {
     }
 }
 
-export default CardItem;
+export default CardSection;
