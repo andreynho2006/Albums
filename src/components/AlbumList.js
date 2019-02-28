@@ -5,12 +5,16 @@ import AlbumDetail from './AlbumDetail';
 
 //class Component   (life cicle methods)
 class AlbumList extends Component {
-    state = { albums: [] };
+    state = { albums: [{ title: 'Taylor Swift' },
+                       { title: 'Fearless' },
+                       { title: 'Speak now' }, 
+                       { title: 'Red' }, 
+                       { title: '1989' }] };
 
-    componentWillMount() {
-        axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-            .then(response => this.setState({ albums: response.data }));
-    }
+    // componentWillMount() {
+    //     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
+    //         .then(response => this.setState({ albums: response.data }));
+    // }
 
     //helper function to get the albums
     renderAlbums() {
